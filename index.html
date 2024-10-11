@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bryan's Portfolio</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&family=Poppins:wght@600&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <style>
         * {
             box-sizing: border-box;
@@ -13,38 +20,55 @@
 
         body {
             font-family: Arial, sans-serif;
-            background: url('https://cdn.pfps.gg/pfps/5658-kakashi.gif') no-repeat center center fixed;
+            background: url('https://i.pinimg.com/originals/cb/c4/60/cbc46089e606d74db7b72ef669bedd9c.gif') no-repeat center center fixed;
             background-size: cover;
             color: white;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
             min-height: 100vh;
         }
 
         h1 {
-            margin: 20px 0;
-            font-size: 2.5em;
-            text-align: center;
-            z-index: 1;
-            background: rgba(0, 0, 0, 0.1);
-            padding: 10px 20px;
-            border-radius: 10px;
+            font-family: 'Poppins', sans-serif; 
+            font-size: 3em; 
+            color: #ac2d07; 
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); 
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animated-text {
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .projects {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            width: 80%;
-            max-width: 1200px;
-            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 30px;
         }
 
         .project-btn {
             background-color: rgba(255, 255, 255, 0.8);
-            color: #333;
+            color: #912121;
             border: none;
             padding: 15px;
             font-size: 1.2em;
@@ -54,22 +78,33 @@
             display: block;
             text-decoration: none;
             transition: transform 0.3s ease, background-color 0.3s ease;
+            margin: 10px;
+            width: 200px;
+            animation: slideIn 1s ease forwards;
         }
 
         .project-btn:hover {
-            background-color: #64019e;
+            background-color: #8d221e;
             transform: scale(1.1); 
         }
 
-        .project-btn:active {
-            transform: scale(3); 
+        .project-btn:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+        .project-btn:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+        .project-btn:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+        .project-btn:nth-child(4) {
+            animation-delay: 0.8s;
+        }
+        .project-btn:nth-child(5) {
+            animation-delay: 1s;
         }
 
         @media (max-width: 768px) {
-            h1 {
-                font-size: 2em;
-            }
-
             .project-btn {
                 font-size: 1em;
                 padding: 12px;
@@ -91,15 +126,42 @@
 
     <div class="overlay"></div>
 
-    <h1>BRY4N-CODER'S Portfolio</h1>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark w-100">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">BRY4N-CODER</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-    <div class="projects">
+    <h1 class="animated-text mt-5 text-center">Hello I'm Bryan!</h1>
+
+    <div class="projects mt-3">
         <a href="project 1.html" class="project-btn">Project 1</a>
         <a href="project 2.html" class="project-btn">Project 2</a>
         <a href="#" class="project-btn">Project 3</a>
         <a href="#" class="project-btn">Project 4</a>
         <a href="#" class="project-btn">Project 5</a>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
