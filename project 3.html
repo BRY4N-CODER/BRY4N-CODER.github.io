@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Supercar Gallery</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <style>
+    body {
+      overflow-x: hidden;
+    }
+    .card-img-top {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    /* Card hover effect */
+    .gallery-card {
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    /* Hidden description on hover */
+    .gallery-card .card-body {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.7); /* Dark background for dark mode */
+      color: #fff; /* Light text for dark mode */
+      padding: 10px;
+      opacity: 0;
+      transform: translateY(100%);
+      transition: all 0.3s ease;
+    }
+
+    /* Reveal description on hover */
+    .gallery-card:hover .card-body {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Default card behavior */
+    .gallery-card img {
+      transition: transform 0.3s ease;
+      object-fit: cover;
+      width: 100%;
+      height: 200px;
+    }
+
+    /* Optional: Hover effect to slightly zoom in the image */
+    .gallery-card:hover img {
+      transform: scale(1.05);
+    }
+
+    /* Set the custom size for the card images */
+    .card-img-top {
+      object-fit: cover;
+      height: 200px;
+    }
+
+    /* Text color in light mode */
+    .bg-light .card-body {
+      background: rgba(255, 255, 255, 0.8); /* Lighter background in light mode */
+      color: #000; /* Dark text in light mode */
+    }
+
+    /* Text color in dark mode */
+    .bg-dark .card-body {
+      background: rgba(0, 0, 0, 0.7); /* Darker background in dark mode */
+      color: #fff; /* Light text in dark mode */
+    }
+  </style>
+</head>
+
+<body id="body" class="bg-light text-dark">
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow" id="navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Supercar Gallery</a>
+      <button class="btn btn-outline-secondary" onclick="changeMode()" type="button">Mode</button>
+    </div>
+  </nav>
+
+  <!-- Carousel Section (Before Lamborghini Gallery) -->
+  <div id="supercarCarousel" class="carousel slide mt-4">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="https://fastrackexperiences.com.au/wp-content/uploads/lambo-vs-ferrari-10-1400x540.jpg" class="d-block w-100">
+      </div>
+      <div class="carousel-item">
+        <img src="https://fastrackexperiences.com.au/wp-content/uploads/lambo-vs-ferrari-8-1400x540.jpg" class="d-block w-100">
+      </div>
+      <div class="carousel-item">
+        <img src="https://fastrackexperiences.com.au/wp-content/uploads/lambo-vs-ferrari-9-1400x540.jpg" class="d-block w-100" >
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#supercarCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#supercarCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <!-- Lamborghini Gallery Section -->
+  <div class="container">
+    <div class="row mt-5">
+      <div class="col">
+        <h1 class="display-3 text-center">Lamborghini Models</h1>
+      </div>
+    </div>
+
+    <!-- Lamborghini Cards Gallery -->
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 mt-4" id="lamborghini-gallery">
+    </div>
+  </div>
+
+  <!-- Lamborghini Description Card -->
+  <div class="row mt-5">
+    <div class="col">
+      <div class="card">
+        <img src="https://wallpapercave.com/wp/nO9wyY0.jpg" class="card-img-top" alt="Lamborghini Logo">
+        <div class="card-body">
+          <h5 class="card-title">About Lamborghini</h5>
+          <p class="card-text">Lamborghini, officially known as Automobili Lamborghini S.p.A., is an Italian luxury sports car manufacturer founded in 1963 by Ferruccio Lamborghini. The company is renowned for producing high-performance, sleek, and visually striking supercars. Lamborghini cars are known for their powerful V10 and V12 engines, cutting-edge technology, and distinctive design. The brand has become synonymous with speed, exclusivity, and luxury. Its iconic models include the Aventador, Huracán, and Urus SUV, with a focus on craftsmanship and innovation. Lamborghini is now part of the Volkswagen Group under the Audi division.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Ferrari Gallery Section -->
+  <div class="container mt-5">
+    <div class="row mt-5">
+      <div class="col">
+        <h1 class="display-3 text-center">Ferrari Models</h1>
+      </div>
+    </div>
+
+    <!-- Ferrari Cards Gallery -->
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 mt-4" id="ferrari-gallery">
+    </div>
+  </div>
+  <!-- Ferrari Description Card -->
+  <div class="row mt-5">
+    <div class="col">
+      <div class="card">
+        <img src="https://hyperpix.net/wp-content/uploads/2022/07/ferrari-logo-font-free-download-856x484.jpg" class="card-img-top" alt="Ferrari Logo">
+        <div class="card-body">
+          <h5 class="card-title">About Ferrari</h5>
+          <p class="card-text">Ferrari, founded in 1939 by Enzo Ferrari, is an Italian luxury sports car manufacturer renowned for producing high-performance, precision-engineered cars. The brand is synonymous with speed, elegance, and innovation, combining cutting-edge technology with timeless design. Ferrari vehicles are known for their powerful V8 and V12 engines, advanced aerodynamics, and motorsport heritage, particularly in Formula 1. Iconic models include the Ferrari 488 GTB, LaFerrari, and the Ferrari Roma. Ferrari's exclusivity and craftsmanship make it one of the most coveted luxury car brands in the world.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+    <div class="row mt-5">
+      <div class="col">
+        <h1 class="display-3">
+          For More Info 
+          <button type="button" onclick="expandContent()" class="btn btn-outline-secondary" id="btnExpand">Expand</button>
+          <!-- Calls the expandContent() JS function (line 99) -->
+        </h1>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid" id="footer" style="display: none;">
+    <div class="row">
+      <div class="col p-5" style="background-color: rgb(128, 15, 0);">
+        <h1 class="display-2 text-center" style="color: white">
+            <a href="https://www.lamborghini.com/en-en" target="_blank">
+                <img src="https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/logos/2024/03_26/logo_header_01.svg" alt="Lamborghini Logo" style="width: 150px;">
+              </a>
+              <a href="https://www.ferrari.com/en-PH" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/en/3/36/Prancing_horse.svg" alt="Lamborghini Logo" style="width: 150px;">
+              </a>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Array of Lamborghini car images and details
+    const lamborghiniData = [
+      {
+        img: 'https://pictures.dealer.com/l/lamborghinidallas/1640/240f8d8b6590ae0d51420d1b0de7151ex.jpg?impolicy=downsize_bkpt&w=2500',
+        name: 'Huracán STO',
+        details: 'The Lamborghini Huracán STO is a road-homologated super sports car with a racing spirit.'
+      },
+      {
+        img: 'https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/facelift_2019/model_detail/aventador/svj/2021/03_19/aventador_svj_s2.jpg',
+        name: 'Aventador SJV',
+        details: 'A high-performance supercar with a 770 hp V12 engine, advanced aerodynamics, and aggressive design for exceptional speed and handling.'
+      },
+      {
+        img: 'https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/facelift_2019/model_gw/urus/2024/10_08_refresh/s2.jpg',
+        name: 'Urus',
+        details: 'The Lamborghini Urus is a luxury SUV combining Lamborghini performance with practicality.'
+      },
+      {
+        img: 'https://www.thedrive.com/wp-content/uploads/images-by-url-td/content/2020/08/Guillaume-Fournier-Photographe-5806.jpg?quality=85',
+        name: 'Huracán EVO Spyder',
+        details: 'The Huracán EVO Spyder is designed to amplify the everyday driving experience by combining performance with open-air freedom.'
+      }
+    ];
+
+    // Array of Ferrari car images and details
+    const ferrariData = [
+      {
+        img: 'https://www.williamloughran.co.uk//media/7431/ferrari-laferrari-2311-1.jpg?anchor=center&mode=crop&width=1400&height=675&rnd=133068622440000000',
+        name: 'Ferrari LaFerrari',
+        details: 'The LaFerrari is Ferrari ultimate hypercar, featuring a 950 hp hybrid V12 engine, advanced aerodynamics, and cutting-edge technology for extreme performance.'
+      },
+      {
+        img: 'https://www.ferrariofgreenwich.com/wp-content/uploads/2022/08/p2a2965.jpg',
+        name: 'Ferrari Roma',
+        details: 'A 611-hp V8 engine and sleek design, offering a balance between comfort and raw power.'
+      },
+      {
+        img: 'https://static01.nyt.com/images/2016/08/05/automobiles/autoreviews/driven-ferrari-488gtb/driven-ferrari-488gtb-videoSixteenByNine1050.jpg',
+        name: 'Ferrari 488 GTB',
+        details: 'A high-performance supercar with a 3.9-liter twin-turbo V8 engine, delivering outstanding speed and handling.'
+      },
+      {
+        img: 'https://content.homenetiol.com/2000292/2126067/0x0/b3282dc99693472ca7f4151243765fa0.jpg',
+        name: 'Ferrari SF90 Stradale',
+        details: 'Ferrari first plug-in hybrid supercar that pushes the limits of performance.'
+      }
+    ];
+
+    // Function to render Lamborghini gallery
+    function renderLamborghiniGallery() {
+      const galleryElement = document.getElementById('lamborghini-gallery');
+      lamborghiniData.forEach(car => {
+        galleryElement.innerHTML += `
+          <div class="col">
+            <div class="card gallery-card">
+              <img src="${car.img}" class="card-img-top" alt="${car.name}">
+              <div class="card-body">
+                <h5 class="card-title">${car.name}</h5>
+                <p class="card-text">${car.details}</p>
+              </div>
+            </div>
+          </div>
+        `;
+      });
+    }
+
+    // Function to render Ferrari gallery
+    function renderFerrariGallery() {
+      const galleryElement = document.getElementById('ferrari-gallery');
+      ferrariData.forEach(car => {
+        galleryElement.innerHTML += `
+          <div class="col">
+            <div class="card gallery-card">
+              <img src="${car.img}" class="card-img-top" alt="${car.name}">
+              <div class="card-body">
+                <h5 class="card-title">${car.name}</h5>
+                <p class="card-text">${car.details}</p>
+              </div>
+            </div>
+          </div>
+        `;
+      });
+    }
+
+    // Call functions to render both galleries
+    renderLamborghiniGallery();
+    renderFerrariGallery();
+
+    function changeMode() {
+  const body = document.getElementById('body');
+  const navbar = document.getElementById('navbar');
+  const currentMode = body.classList.contains('bg-dark');
+  
+  if (currentMode) {
+    // Switch to light mode
+    body.classList.remove('bg-dark', 'text-light');
+    body.classList.add('bg-light', 'text-dark');
+    
+    // Update navbar for light mode
+    navbar.classList.remove('navbar-dark', 'bg-dark');
+    navbar.classList.add('navbar-light', 'bg-light');
+  } else {
+    // Switch to dark mode
+    body.classList.remove('bg-light', 'text-dark');
+    body.classList.add('bg-dark', 'text-light');
+    
+    // Update navbar for dark mode
+    navbar.classList.remove('navbar-light', 'bg-light');
+    navbar.classList.add('navbar-dark', 'bg-dark');
+  }
+}
+var display = "none";
+    function expandContent(){
+      var footer = document.getElementById("footer");
+      var btnExpand = document.getElementById("btnExpand");
+
+      if(display == "none") {
+        footer.style.display = "block";
+        display = "block";
+        btnExpand.innerHTML = "Collapse";
+      } else {
+        footer.style.display = "none";
+        display = "none";
+        btnExpand.innerHTML = "Expand";
+      }
+    }
+
+  </script>
+
+</body>
+
+</html>
