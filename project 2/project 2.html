@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +9,7 @@
     <link rel="stylesheet" href="css/style.css">
     <style>
         .hero {
-            background-image: url('https://img.freepik.com/premium-photo/pixel-art-mountain-with-japanese-temple-background_684218-93.jpg?w=1380'); /* Example: Mount Fuji background */
+            background-image: url('https://img.freepik.com/premium-photo/pixel-art-mountain-with-japanese-temple-background_684218-93.jpg?w=1380');
             background-size: cover;
             background-position: center;
             height: 100vh;
@@ -18,53 +19,64 @@
             justify-content: center;
             align-items: center;
         }
+
         .hero h1 {
             font-size: 4rem;
         }
+
         .section-title {
             margin: 2rem 0;
         }
+
         .culture-img {
             height: 250px;
             object-fit: cover;
         }
+
         footer {
             background-color: #333;
             color: white;
             padding: 1rem;
             text-align: center;
-            margin-top: 2rem; 
+            margin-top: 2rem;
         }
+
         .culture-img {
-            height: 450px; 
-            object-fit: cover; 
+            height: 450px;
+            object-fit: cover;
         }
+
         .landmark-img {
-            height: 250px; 
-            object-fit: cover; 
+            height: 250px;
+            object-fit: cover;
         }
-   
-        .food-card, .landmark-card {
-            transition: transform 0.3s, box-shadow 0.3s; 
+
+        .food-card,
+        .landmark-card {
+            transition: transform 0.3s, box-shadow 0.3s;
         }
-        .food-card:hover, .landmark-card:hover {
-            transform: scale(1.05); 
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); 
+
+        .food-card:hover,
+        .landmark-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }
+
         .navbar-brand img {
-            height: 40px; 
+            height: 40px;
         }
     </style>
 </head>
+
 <body>
-    <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <img src="https://seeklogo.com/images/J/Japan-logo-95CBBFE790-seeklogo.com.png" alt="Japan Logo" />
                 Explore Japan
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -78,7 +90,6 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <header class="hero">
         <div class="text-container">
             <h1>Welcome to Japan</h1>
@@ -86,99 +97,114 @@
         </div>
     </header>
 
-    <!-- Main Content -->
     <main class="container mt-5">
-        <!-- Culture Section -->
         <section id="culture">
             <h2 class="section-title text-center">Japanese Culture</h2>
             <div id="cultureCarousel" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="https://as2.ftcdn.net/v2/jpg/04/30/11/79/1000_F_430117991_x1RupYSwmD5AqvDI56T73zoUgEqq69uu.jpg" alt="Japanese Culture 1" class="d-block w-100 culture-img">
+                        <img src="https://as2.ftcdn.net/v2/jpg/04/30/11/79/1000_F_430117991_x1RupYSwmD5AqvDI56T73zoUgEqq69uu.jpg"
+                            alt="Japanese Culture 1" class="d-block w-100 culture-img">
                     </div>
                     <div class="carousel-item">
-                        <img src="https://facts.net/wp-content/uploads/2024/01/19-japanese-clothing-facts-1704787360.jpg" alt="Japanese Culture 2" class="d-block w-100 culture-img">
+                        <img src="https://facts.net/wp-content/uploads/2024/01/19-japanese-clothing-facts-1704787360.jpg"
+                            alt="Japanese Culture 2" class="d-block w-100 culture-img">
                     </div>
                     <div class="carousel-item">
-                        <img src="https://shop.bandai.com/media/magefan_blog/Blog_Banner_032.jpg" alt="Japanese Culture 3" class="d-block w-100 culture-img">
+                        <img src="https://shop.bandai.com/media/magefan_blog/Blog_Banner_032.jpg"
+                            alt="Japanese Culture 3" class="d-block w-100 culture-img">
                     </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#cultureCarousel" data-bs-slide="prev">
+                <button class="carousel-control-prev" type="button" data-bs-target="#cultureCarousel"
+                    data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#cultureCarousel" data-bs-slide="next">
+                <button class="carousel-control-next" type="button" data-bs-target="#cultureCarousel"
+                    data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
             <div class="text-center mt-3">
-                <p>Japan's culture is rich and varied, ranging from traditional tea ceremonies, kabuki theater, and sumo wrestling to the futuristic technology and modern art found in bustling cities like Tokyo.</p>
+                <p>Japan's culture is rich and varied, ranging from traditional tea ceremonies, kabuki theater, and sumo
+                    wrestling to the futuristic technology and modern art found in bustling cities like Tokyo.</p>
             </div>
         </section>
 
-        <!-- Landmarks Section -->
+
         <section id="landmarks" class="mt-5">
             <h2 class="section-title text-center">Famous Landmarks</h2>
             <div class="row">
                 <div class="col-md-4">
                     <div class="card landmark-card">
-                        <img src="https://japansvolcanicpeaktours.weebly.com/uploads/4/4/1/3/44139725/827058_orig.gif" class="card-img-top landmark-img" alt="Mount Fuji">
+                        <img src="https://japansvolcanicpeaktours.weebly.com/uploads/4/4/1/3/44139725/827058_orig.gif"
+                            class="card-img-top landmark-img" alt="Mount Fuji">
                         <div class="card-body">
                             <h5 class="card-title">Mount Fuji</h5>
-                            <p class="card-text">Mount Fuji is Japan's highest mountain and a symbol of the country, famous for its snow-capped beauty.</p>
+                            <p class="card-text">Mount Fuji is Japan's highest mountain and a symbol of the country,
+                                famous for its snow-capped beauty.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card landmark-card">
-                        <img src="https://i.pinimg.com/originals/03/e1/d3/03e1d3538a37f81161da7fcda166fb3b.gif" class="card-img-top landmark-img" alt="Kyoto Temples">
+                        <img src="https://i.pinimg.com/originals/03/e1/d3/03e1d3538a37f81161da7fcda166fb3b.gif"
+                            class="card-img-top landmark-img" alt="Kyoto Temples">
                         <div class="card-body">
                             <h5 class="card-title">Kyoto Temples</h5>
-                            <p class="card-text">Kyoto is home to many ancient temples and shrines, offering a glimpse into Japan's spiritual past.</p>
+                            <p class="card-text">Kyoto is home to many ancient temples and shrines, offering a glimpse
+                                into Japan's spiritual past.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card landmark-card">
-                        <img src="https://i.pinimg.com/originals/cc/4b/be/cc4bbe6dfbe611efa0f175b066086634.gif" class="card-img-top landmark-img" alt="Tokyo Tower">
+                        <img src="https://i.pinimg.com/originals/cc/4b/be/cc4bbe6dfbe611efa0f175b066086634.gif"
+                            class="card-img-top landmark-img" alt="Tokyo Tower">
                         <div class="card-body">
                             <h5 class="card-title">Tokyo Tower</h5>
-                            <p class="card-text">Tokyo Tower is a modern landmark offering stunning views of the city, symbolizing Japan’s innovation.</p>
+                            <p class="card-text">Tokyo Tower is a modern landmark offering stunning views of the city,
+                                symbolizing Japan’s innovation.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Food Section -->
         <section id="food" class="mt-5">
             <h2 class="section-title text-center">Japanese Food</h2>
             <div class="row">
                 <div class="col-md-4">
                     <div class="card food-card">
-                        <img src="https://media1.tenor.com/m/Edq9CDD9-O0AAAAC/sushi-japanesefood.gif" alt="Sushi" class="card-img-top food-img">
+                        <img src="https://media1.tenor.com/m/Edq9CDD9-O0AAAAC/sushi-japanesefood.gif" alt="Sushi"
+                            class="card-img-top food-img">
                         <div class="card-body">
                             <h5 class="card-title">Sushi</h5>
-                            <p class="card-text">Japanese cuisine is world-renowned, with sushi being one of the most popular dishes. Experience the unique flavors!</p>
+                            <p class="card-text">Japanese cuisine is world-renowned, with sushi being one of the most
+                                popular dishes. Experience the unique flavors!</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card food-card">
-                        <img src="https://media1.tenor.com/m/mPoRVmC2758AAAAC/rice-cooking.gif" alt="Ramen" class="card-img-top food-img">
+                        <img src="https://media1.tenor.com/m/mPoRVmC2758AAAAC/rice-cooking.gif" alt="Ramen"
+                            class="card-img-top food-img">
                         <div class="card-body">
                             <h5 class="card-title">Ramen</h5>
-                            <p class="card-text">Ramen is a delicious noodle soup that is beloved in Japan, with various regional variations.</p>
+                            <p class="card-text">Ramen is a delicious noodle soup that is beloved in Japan, with various
+                                regional variations.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card food-card">
-                        <img src="https://media1.tenor.com/m/7p1tgT-rPkMAAAAC/fried-shrimps-fried-prawns.gif" alt="Tempura" class="card-img-top food-img">
+                        <img src="https://media1.tenor.com/m/7p1tgT-rPkMAAAAC/fried-shrimps-fried-prawns.gif"
+                            alt="Tempura" class="card-img-top food-img">
                         <div class="card-body">
                             <h5 class="card-title">Tempura</h5>
-                            <p class="card-text">Tempura is a dish of battered and deep-fried seafood and vegetables, offering a light and crispy texture.</p>
+                            <p class="card-text">Tempura is a dish of battered and deep-fried seafood and vegetables,
+                                offering a light and crispy texture.</p>
                         </div>
                     </div>
                 </div>
@@ -196,4 +222,5 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
