@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Digimon</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <style>
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        [data-bs-theme="dark"] {
+            --bs-body-bg: #000000;
+        }
+
+        [data-bs-theme="light"] {
+            background: linear-gradient(to bottom right, #FF5733, #FFC300);
+        }
+
+        .card {
+            overflow: hidden;
+            border-radius: 15px;
+            margin: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            color: black;
+            border: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.6s ease;
+            background-color: #ffeb3b;
+        }
+
+        [data-bs-theme="dark"] .card {
+            background-color: #222;
+            color: #fff;
+        }
+
+        .card img {
+            padding: 10px;
+            border-radius: 15px;
+            height: auto;
+            max-height: 250px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .characterName {
+            font-weight: bold;
+            font-size: 1em;
+        }
+
+        .pagination .page-item {
+            margin: 2px;
+        }
+
+        .header {
+            position: relative;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .header-title img {
+            animation: fadeIn 2s ease-in-out;
+            max-width: 600px;
+            width: 100%;
+            height: auto;
+            filter: invert(0%);
+        }
+
+        [data-bs-theme="dark"] .header-title img {
+            filter: invert(100%);
+        }
+
+        .logo-container {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+        .logo-container img {
+            width: 200px;
+            height: auto;
+            cursor: pointer;
+        }
+
+        .toggle-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 5px 10px;
+            background-color: #6c757d;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+
+        .toggle-button i {
+            font-size: 1.25em;
+            margin-right: 5px;
+        }
+
+        .toggle-button:hover {
+            background-color: #5a6268;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body id="body" data-bs-theme="light">
+    <header class="header">
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Digimon_Logo.svg/800px-Digimon_Logo.svg.png"
+                    alt="Logo">
+            </a>
+        </div>
+
+        <button class="toggle-button" onclick="changeMode()">
+            <i class="bi bi-moon-fill"></i>
+            <span id="toggleText">Dark Mode</span>
+        </button>
+
+        <div class="header-title">
+            <img src="https://see.fontimg.com/api/rf5/mOm9/ZDMxZWI2OGRkNzYzNDE1ZmE5NmU3MWIyYzczZTYwNDcub3Rm/RGlnaW1vbiBXb3JsZA/pixel-digivolve.png?r=fs&h=65&w=1000&fg=000000&bg=FFFFFF&tb=1&s=65"
+                alt="Digimon World">
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="row my-5 text-center">
+            <div class="h1" id="digimons">
+                <div class="row d-flex justify-content-center mx-auto" id="cardContainer"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row my-5">
+            <div class="col">
+                <nav aria-label="Pagination">
+                    <ul class="pagination justify-content-center" id="pagination"></ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <footer class="pt-3">
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3"></ul>
+            <p class="text-center text-body-secondary">© 2024 Project 4. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <script>
+        var colors = {
+            "Baby I": "#00e6ac",
+            "Baby II": "#0066ffD",
+            "Child": "#669999",
+            "Adult": "#ff9900",
+            "Perfect": "#ff3300D",
+            "Ultimate": "#9900cc"
+        };
+
+        var cardContainer = document.getElementById("cardContainer");
+        var paginationContainer = document.getElementById("pagination");
+        var page = 1;
+        var totalDigimons = 201; 
+        var digimonsPerPage = 12;
+
+        const loadDigimons = async () => {
+            cardContainer.innerHTML = "";
+            var baseline = 1 + ((page - 1) * digimonsPerPage);
+            var digimonCount = Math.min(baseline + digimonsPerPage - 1, totalDigimons); 
+
+            for (var i = baseline; i <= digimonCount; i++) {
+                const response = await fetch('https://digi-api.com/api/v1/digimon/' + i);
+                const digimon = await response.json();
+
+                let cardColor;
+                if (digimon.levels && digimon.levels.length > 0) {
+                    cardColor = colors[digimon.levels[0].level] || "#D3D3D3"; 
+                } else {
+                    cardColor = "#D3D3D3"; 
+                }
+
+                cardContainer.innerHTML += `
+          <div class="col-6 col-sm-6 col-md-4 col-lg-3 p-1">
+            <a href="view.html?digimonName=` + digimon.name + `">
+              <div class="card mb-2" style="background-color: ` + cardColor + `;">
+                <div class="imgcontainer">
+                  <img src="` + digimon.images[0].href + `" class="card-img-top" alt="` + digimon.name + `">
+                </div>
+                <div class="characterName pb-3 text-center">` + digimon.name + `</div>
+              </div>
+            </a>
+          </div>`;
+            }
+
+            updatePagination();
+        }
+
+        const updatePagination = () => {
+            paginationContainer.innerHTML = ""; 
+            var totalPages = Math.ceil(totalDigimons / digimonsPerPage);
+
+            for (let i = 1; i <= totalPages; i++) {
+                const pageItem = document.createElement("li");
+                pageItem.className = "page-item " + (i === page ? "active" : "");
+                pageItem.innerHTML = `<a class="page-link" onclick="changePage(${i})">${i}</a>`;
+                paginationContainer.appendChild(pageItem);
+            }
+        }
+
+        function changePage(newPage) {
+            page = newPage;
+            loadDigimons();
+        }
+
+        loadDigimons();
+
+        function changeMode() {
+            var body = document.getElementById("body");
+            var mode = body.getAttribute("data-bs-theme") === "dark" ? "light" : "dark";
+            body.setAttribute("data-bs-theme", mode);
+
+            var toggleIcon = document.querySelector('.toggle-button i');
+            var toggleText = document.getElementById('toggleText');
+            if (mode === "dark") {
+                toggleIcon.className = "bi bi-sun-fill";
+                toggleText.textContent = "Light Mode";
+            } else {
+                toggleIcon.className = "bi bi-moon-fill";
+                toggleText.textContent = "Dark Mode";
+            }
+        }
+    </script>
+</body>
+
+</html>
