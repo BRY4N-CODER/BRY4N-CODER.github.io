@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Explore Japan</title>
+    <link rel="icon" href="icon.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <style>
@@ -65,6 +66,11 @@
         .navbar-brand img {
             height: 40px;
         }
+
+        .weather-widget {
+            margin-top: 50px;
+            text-align: center;
+        }
     </style>
 </head>
 
@@ -96,6 +102,14 @@
             <p>Discover the beauty, culture, and traditions of the Land of the Rising Sun</p>
         </div>
     </header>
+
+    <!-- Weather Widget Section -->
+    <div class="weather-widget">
+        <div id="ww_d435bc1a9aa64" v='1.3' loc='id' a='{"t":"responsive","lang":"en","sl_lpl":1,"ids":["wl1479"],"font":"Arial","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"rgba(22,129,179,1)","cl_font":"#FFFFFF","cl_cloud":"#FFFFFF","cl_persp":"#81D4FA","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722"}'>
+            Weather Data Source: <a href="https://wetterlang.de/wetter_21_tage/" id="ww_d435bc1a9aa64_u" target="_blank">Wetter 21 tage</a>
+        </div>
+        <script async src="https://app3.weatherwidget.org/js/?id=ww_d435bc1a9aa64"></script>
+    </div>
 
     <main class="container mt-5">
         <section id="culture">
@@ -131,7 +145,6 @@
                     wrestling to the futuristic technology and modern art found in bustling cities like Tokyo.</p>
             </div>
         </section>
-
 
         <section id="landmarks" class="mt-5">
             <h2 class="section-title text-center">Famous Landmarks</h2>
@@ -181,30 +194,29 @@
                             class="card-img-top food-img">
                         <div class="card-body">
                             <h5 class="card-title">Sushi</h5>
-                            <p class="card-text">Japanese cuisine is world-renowned, with sushi being one of the most
-                                popular dishes. Experience the unique flavors!</p>
+                            <p class="card-text">Sushi is one of Japan's most famous dishes, consisting of rice,
+                                fish, and seaweed.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card food-card">
-                        <img src="https://media1.tenor.com/m/mPoRVmC2758AAAAC/rice-cooking.gif" alt="Ramen"
-                            class="card-img-top food-img">
+                        <img src="https://i.pinimg.com/originals/d7/47/0c/d7470c080bb3c4c0f9e22f03f68846be.gif"
+                            alt="Ramen" class="card-img-top food-img">
                         <div class="card-body">
                             <h5 class="card-title">Ramen</h5>
-                            <p class="card-text">Ramen is a delicious noodle soup that is beloved in Japan, with various
-                                regional variations.</p>
+                            <p class="card-text">Ramen is a noodle dish that is served in a meat or fish-based broth.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card food-card">
-                        <img src="https://media1.tenor.com/m/7p1tgT-rPkMAAAAC/fried-shrimps-fried-prawns.gif"
+                        <img src="https://i.pinimg.com/originals/a4/66/90/a466906115213059b4c01ad7e694a8c7.gif"
                             alt="Tempura" class="card-img-top food-img">
                         <div class="card-body">
                             <h5 class="card-title">Tempura</h5>
-                            <p class="card-text">Tempura is a dish of battered and deep-fried seafood and vegetables,
-                                offering a light and crispy texture.</p>
+                            <p class="card-text">Tempura is a Japanese dish where seafood or vegetables are deep-fried
+                                in a light batter.</p>
                         </div>
                     </div>
                 </div>

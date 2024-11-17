@@ -16,23 +16,18 @@
 
         body {
             background: linear-gradient(to bottom right, #FF7F50, #FF4500);
-            /* Orange to Red gradient */
             color: #fff;
-            /* Default text color for light mode */
         }
 
         body[data-bs-theme="dark"] {
             background: linear-gradient(to bottom right, #333, #555);
-            /* Dark background */
             color: #fff;
-            /* Text color for dark mode */
         }
 
         #img {
             border-radius: 4%;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             width: 90%;
-            /* Adjusted for better card style */
             height: auto;
             object-fit: cover;
         }
@@ -44,18 +39,13 @@
         .card {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             border-radius: 10px;
-            /* Rounded corners */
             color: black;
             align-items: center;
             width: 100%;
             height: 600px;
-            /* Height of the card */
             border: 2px solid #000;
-            /* Black border */
             position: relative;
-            /* Position relative for the background */
             overflow: hidden;
-            /* Hide overflow for background */
         }
 
         .card::before {
@@ -66,27 +56,19 @@
             right: 0;
             bottom: 0;
             background-image: url('https://world.digimoncard.com/images/products/pack/rb-01/special/point_02_bg.png?230825');
-            /* Background image URL */
             background-size: cover;
-            /* Cover the entire card */
             opacity: 0.6;
-            /* Increased opacity for better visibility */
             z-index: 0;
-            /* Send the background behind content */
         }
 
         .card-content {
             position: relative;
-            /* Position relative for card content */
             z-index: 1;
-            /* Bring content in front of the background */
         }
 
         body[data-bs-theme="dark"] .card {
             background: #222;
-            /* Dark background for cards */
             color: #fff;
-            /* Text color for card in dark mode */
         }
 
         .card:hover {
@@ -95,7 +77,6 @@
 
         .character-name {
             font-size: 1.8rem;
-            /* Larger font size for name */
             font-weight: bold;
             text-align: center;
             margin: 10px 0;
@@ -109,25 +90,17 @@
 
         .attribute {
             background: #f0f0f0;
-            /* Light grey for attributes */
             border: 1px solid #ccc;
-            /* Border around attribute boxes */
             padding: 10px;
             border-radius: 5px;
-            /* Rounded corners */
             width: 30%;
-            /* Fixed width for attributes */
             text-align: center;
-            /* Center align text */
         }
 
         body[data-bs-theme="dark"] .attribute {
             background: #444;
-            /* Dark background for attributes */
             color: #fff;
-            /* Text color for attributes in dark mode */
             border: 1px solid #666;
-            /* Darker border for attributes in dark mode */
         }
 
         footer {
@@ -136,12 +109,10 @@
             width: 100%;
             text-align: center;
             color: #fff;
-            /* Change footer text color to white */
         }
 
         body[data-bs-theme="dark"] footer {
             color: #ccc;
-            /* Lighter color for footer text in dark mode */
         }
     </style>
 </head>
@@ -229,7 +200,7 @@
 
             const digimonLevel = digimon.levels[0].level;
             const card = document.querySelector('.card');
-            card.style.backgroundColor = colors[digimonLevel] || "#D3D3D3"; // Fallback color
+            card.style.backgroundColor = colors[digimonLevel] || "#D3D3D3"; 
         };
 
         const queryString = window.location.search;
