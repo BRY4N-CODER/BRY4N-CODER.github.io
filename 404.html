@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Not Found</title>
+    <style>
+        body {
+            background: url('Pictures/cyber.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #0f9b8e;
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+            text-align: center;
+        }
+        h1 {
+            font-size: 5rem;
+            font-weight: bold;
+            text-align: center;
+            text-shadow: 0 0 5px #0f9b8e, 0 0 10px #0f9b8e, 0 0 15px #0f9b8e;
+            animation: glow 1.5s ease-in-out infinite alternate;
+        }
+        @keyframes glow {
+            0% { text-shadow: 0 0 5px #0f9b8e, 0 0 10px #0f9b8e, 0 0 15px #1db954; }
+            100% { text-shadow: 0 0 5px #1db954, 0 0 10px #0f9b8e, 0 0 15px #0f9b8e; }
+        }
+        p {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        .link {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 12px 24px;
+            background-color: #0f9b8e;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            transition: all 0.3s ease;
+        }
+        .link:hover {
+            color: #fff;
+            background-color: #1db954;
+            transform: scale(1.1);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <h1>ERROR 404</h1>
+    <p>Oops! The page you’re looking for doesn’t exist.</p>
+    <a href="/" class="link">Go Back</a>
+</body>
+</html>

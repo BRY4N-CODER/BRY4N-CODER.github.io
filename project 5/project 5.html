@@ -86,33 +86,156 @@
       color: #FF4655;
       box-shadow: 0 0 15px rgba(255, 70, 85, 0.8);
     }
+
+    .valorant-row {
+      background-color: #121212;
+      color: white;
+      padding: 50px 20px;
+    }
+
+    .valorant-row h2 {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 2.5rem;
+      color: #FF4655;
+      text-align: center;
+    }
+
+    .valorant-row p {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 1.2rem;
+      text-align: center;
+    }
+
+    .valorant-card img {
+      display: block;
+      margin: auto;
+      object-fit: cover;
+      width: auto;
+      height: 200px;
+      max-width: 100%;
+      border-bottom: 3px solid #FF4655;
+    }
+
+
+
+    .valorant-card {
+      text-align: center;
+      background-color: #1b1b1b;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .valorant-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 20px rgba(255, 70, 85, 0.6);
+    }
+
+    .valorant-card .card-title {
+      margin-top: 15px;
+      font-size: 1.3rem;
+      color: #FF4655;
+    }
+
+    .valorant-card .card-text {
+      margin-top: 10px;
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 1rem;
+      color: white;
+    }
+
+    .valorant-card img {
+      object-fit: cover;
+      height: 200px;
+      border-bottom: 3px solid #FF4655;
+    }
   </style>
 </head>
 
 <body>
- 
   <div class="video-container">
-    <iframe src="https://www.youtube.com/embed/btpWg1gDXIE?si=YiBTmr3duoYQgCwZ&autoplay=1&mute=1&controls=0&rel=0&disablekb=1&loop=1"
-      frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    <iframe
+      src="https://www.youtube.com/embed/btpWg1gDXIE?si=YiBTmr3duoYQgCwZ&autoplay=1&mute=1&controls=0&rel=0&disablekb=1&loop=1"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
       allowfullscreen></iframe>
-   
     <div class="background-overlay"></div>
-   
     <div class="foreground-content">
       <div class="valorant-title">VALORANT</div>
       <div class="valorant-subtitle">ALL PATHS END HERE</div>
     </div>
   </div>
-
   
-  <div class="container-fluid d-flex justify-content-center py-4" style="background-color: black;">
-    <a href="https://playvalorant.com/" target="_blank" class="btn btn-theme">
-      Play Now
-    </a>
+
+  <div class="container-fluid valorant-row">
+    <div class="row">
+      <div class="col-12">
+        <h2>Discover the World of Valorant</h2>
+        <p>
+          Step into a tactical shooter where style meets strategy. Unleash your creativity in gameplay, compete with
+          players worldwide, and prove your skills as a true agent of Valorant.
+        </p>
+      </div>
+    </div>
   </div>
 
+
+<!-- Card Section -->
+<div class="container py-5">
+  <div class="row row-cols-1 row-cols-md-3 g-5">
+    <div class="col">
+      <div class="card valorant-card">
+        <img
+          src="https://static.wikia.nocookie.net/valorant/images/2/21/Vyse_icon.png/revision/latest/smart/width/250/height/250?cb=20240827165928"
+          class="card-img-top" alt="Agent Phoenix">
+        <div class="card-body text-center">
+          <h5 class="card-title">Agent Vyse</h5>
+          <p class="card-text">Vyse is now a metallic radiant who has a radianite-infused alloy flowing through her. playstyle.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card valorant-card">
+        <img
+          src="https://static.wikia.nocookie.net/valorant/images/7/70/Loading_Screen_Haven.png/revision/latest?cb=20200620202335"
+          class="card-img-top" alt="Map Haven">
+        <div class="card-body text-center">
+          <h5 class="card-title">Map: Haven</h5>
+          <p class="card-text">Haven offers three bomb sites, creating a unique strategic twist in every match.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card valorant-card">
+        <img src="https://static.wikia.nocookie.net/valorant/images/5/56/Vandal.png/revision/latest?cb=20230711205307"
+          class="card-img-top" alt="Vandal Rifle">
+        <div class="card-body text-center">
+          <h5 class="card-title">Vandal Rifle</h5>
+          <p class="card-text">The Vandal is a classic assault rifle with incredible power and precision for long-range encounters.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container py-4">
+  <div class="row justify-content-center">
+    <div class="col-auto">
+      <a href="https://playvalorant.com/" target="_blank" class="btn btn-theme">
+        Play Now
+      </a>
+    </div>
+  </div>
+</div>
+
+
+
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-NCKs4u+7RbS9A84LdspQJcFYH9jKkC73HAcJDDi3MZtKcB+tBoTC1XDjwhl0c6gS" crossorigin="anonymous"></script>
+    integrity="sha384-NCKs4u+7RbS9A84LdspQJcFYH9jKkC73HAcJDDi3MZtKcB+tBoTC1XDjwhl0c6gS"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>
