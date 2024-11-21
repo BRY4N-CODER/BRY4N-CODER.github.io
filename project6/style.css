@@ -1,0 +1,85 @@
+/*PUT YOUR CUSTOM STYLE HERE*/
+
+/*!This style is important, do not override!*/
+* {
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+}
+
+h1,
+.display-3 {
+	font-family: 'Helvetica', sans-serif;
+	font-weight: 700;
+	margin-bottom: 1rem;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+}
+
+h1::after {
+	content: '';
+	display: block;
+	width: 50px;
+	height: 4px;
+	background-color: #1A3239;
+	margin-top: 10px;
+}
+
+html, body {
+	background-color: #1B0901; 
+	color: #FFFFFF; 
+}
+
+.main-content {
+	background: linear-gradient(180deg, #112031, #1b3b5f 25%, #274d7c 50%, #5a7594 75%, #6b8098 75%, #d9e8f2 100%);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.header {
+	user-select: none;
+	padding-top: 100px;
+	padding-bottom: 100px; 
+	color: #FFFFFF; 
+}
+
+.header h1 {
+	font-family: 'Fredoka', sans-serif;
+	font-weight: bold;
+}
+
+.header h3 {
+	font-family: 'Fredoka', sans-serif;
+	font-weight: 500;
+}
+
+.line-content {
+	user-select: none;
+	padding-bottom: 100px;
+}
+
+.part {
+	color: #FFFFFF; 
+	padding-top: 50px; 
+	padding-bottom: 50px;
+	font-family: 'Fredoka', sans-serif;
+	font-weight: 500;
+	font-size: 24px;
+	background: rgba(0, 0, 0, 0.5); 
+	border-radius: 8px; 
+}
+
+.fade-in {
+    opacity: 1; 
+    transform: translateY(0px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+@media (max-width: 500px) {
+	.part {
+		font-size: 16px;
+	}
+}
