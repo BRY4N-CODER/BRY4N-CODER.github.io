@@ -1,0 +1,130 @@
+body {
+  background: linear-gradient(145deg, #1e1e2f, #2b2b40);
+  color: #f1f1f1;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.bg-theme {
+  background: linear-gradient(145deg, #1e1e2f, #2b2b40);
+}
+
+.yt-header, .navbar.bg-light.d-lg-none {
+  background: linear-gradient(145deg, #1e1e2f, #2b2b40);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.yt-header {
+  height: 56px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.yt-header .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #00c6ff;
+  text-decoration: none;
+}
+
+.yt-search input {
+  background-color: #1e1e2f;
+  color: #fff;
+  border: 1px solid #444;
+}
+
+.yt-search input::placeholder {
+  color: #aaa;
+}
+
+.yt-search .btn {
+  background-color: #00c6ff;
+  color: #fff;
+  border: none;
+}
+
+.sidebar {
+  position: sticky;
+  top: 56px;
+  height: calc(100vh - 56px);
+  background: linear-gradient(145deg, #1e1e2f, #2b2b40);
+  color: white;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  overflow-y: auto;
+  z-index: 1;
+}
+
+.sidebar h5 {
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.sidebar-link {
+  padding: 10px 15px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #d1d1d1;
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.sidebar-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.sidebar-link.active {
+  background-color: #0d6efd;
+  color: #fff;
+  font-weight: bold;
+}
+
+.video-card {
+  background-color: #2a2a40;
+  color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.video-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+}
+
+.video-card .card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.video-card .card-text {
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+.video-card img {
+  height: 30vh;
+  object-fit: cover;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+.yt-content {
+  padding: 1rem;
+  min-height: calc(100vh - 56px);
+}
+
+.navbar.bg-light.d-lg-none .btn-outline-primary {
+  color: #00c6ff;
+  border-color: #00c6ff;
+}
+
+.navbar.bg-light.d-lg-none .btn-outline-primary:hover {
+  background-color: #00c6ff;
+  color: white;
+}
