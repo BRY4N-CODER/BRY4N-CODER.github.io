@@ -1,0 +1,99 @@
+body {
+    background-color: #1e1e2f;
+    color: #b8ffb4;
+    font-family: 'Creepster', cursive;
+}
+
+.hero {
+    background: url('img/gotham-skyline.jpg') center/cover no-repeat;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #b8ffb4;
+    text-shadow: 2px 2px 6px rgba(14, 218, 7, 0.697);
+}
+
+.hero blockquote {
+    font-family: 'Creepster', cursive;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+}
+
+.joker-title {
+    color: #a29bfe;
+    font-family: 'Creepster', cursive;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px #00ff88;
+}
+
+.joker-nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 1rem 0;
+}
+
+.joker-nav .joker-btn {
+    color: #a29bfe;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px 16px;
+    border-radius: 0.5rem;
+    background-color: transparent;
+    border: 2px solid #a29bfe;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+    font-family: 'Creepster', cursive;
+}
+
+.joker-nav .joker-btn:hover {
+    background-color: #00ff88; 
+    color: #1e1e2f; 
+    box-shadow: 0 0 15px #00ff88; 
+    text-shadow: 1px 1px 4px #800080; 
+    transform: scale(1.05); 
+}
+
+.timeline {
+    position: relative;
+    padding-left: 40px;
+    margin-top: 2rem;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: #6c5ce7; 
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background-color: rgba(0, 128, 0, 0.2); 
+    border-left: 4px solid #6c5ce7; 
+    border-radius: 5px;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 12px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #55efc3; 
+    top: 0;
+}
+
+.timeline-item h4 {
+    color: #dfe6e9;
+    font-family: 'Creepster', cursive;
+}
+
+

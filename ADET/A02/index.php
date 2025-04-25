@@ -1,9 +1,9 @@
 <?php
-$page = $_GET['page'] ?? 'home'; // Default to 'home' if 'page' is not set
+$page = $_GET['page'] ?? 'home'; 
 $valid_pages = ['home', 'trending', 'watch'];
 
 if (!in_array($page, $valid_pages)) {
-  $page = 'home'; // Default to 'home' if an invalid page is passed
+  $page = 'home'; 
 }
 ?>
 

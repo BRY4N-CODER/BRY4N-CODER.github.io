@@ -1,0 +1,73 @@
+body {
+    background-color: #1e1e2f;
+    color: #b8ffb4;
+    font-family: 'Creepster', cursive;
+}
+
+.joker-title {
+    color: #a29bfe;
+    font-family: 'Creepster', cursive;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px #00ff88;
+}
+
+.joker-nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 1rem 0;
+}
+
+.joker-nav .joker-btn {
+    color: #a29bfe;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px 16px;
+    border-radius: 0.5rem;
+    background-color: transparent;
+    border: 2px solid #a29bfe;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+    font-family: 'Creepster', cursive;
+}
+
+.joker-nav .joker-btn:hover {
+    background-color: #00ff88; 
+    color: #1e1e2f; 
+    box-shadow: 0 0 15px #00ff88; 
+    text-shadow: 1px 1px 4px #800080; 
+    transform: scale(1.05); 
+}
+.quote-card {
+    background: linear-gradient(135deg, rgba(0, 255, 0, 0.1), rgba(138, 43, 226, 0.1));
+    border-left: 6px solid #8a2be2;
+    border-right: 6px solid #00ff00;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 0.75rem;
+    color: #fff;
+    box-shadow: 0 0 15px rgba(138, 43, 226, 0.4);
+    font-family: 'Creepster', cursive;
+}
+
+.quote-card em {
+    font-size: 1.25rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+
+.quote-card small {
+    font-family: Arial, sans-serif;
+    font-size: 0.9rem;
+    color: #feca57;
+}
+
+.section-title {
+    font-family: 'Creepster', cursive;
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    background: linear-gradient(to right, #00ff00, #8a2be2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
