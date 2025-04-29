@@ -5,14 +5,37 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, #00ff00, #800080); 
-    opacity: .3; 
+    background: linear-gradient(to bottom, #00ff00, #800080);
+    opacity: 0.3;
     z-index: -1;
+    scrollbar-width: none;
+    /* For Firefox */
+    -ms-overflow-style: none;
+}
+
+body::-webkit-scrollbar {
+    display: none;
 }
 
 .header-bg {
     background-color: #1e1e2f;
     color: #feca57;
+}
+
+.card {
+    position: relative;
+    flex: 1;
+    border: 2px solid #00ff00;
+    background-size: cover;
+    background-position: center;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    height: 180px;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.02);
 }
 
 .overlay {
@@ -28,50 +51,12 @@ body::before {
     justify-content: center;
     text-align: center;
     opacity: 0;
-    transition: opacity 0.3s;
-}
-
-.card {
-    position: relative;
-    flex: 1;
-    border: 2px solid #00ff00;
-    background-size: cover;
-    background-position: center;
-    border-radius: 0.75rem;
-    overflow: hidden;
+    transition: opacity 0.3s ease-in-out;
+    padding: 10px;
 }
 
 .card:hover .overlay {
     opacity: 1;
-}
-
-.container {
-    height: calc(100vh - 112px);
-    overflow: hidden;
-    padding: 0;
-}
-
-.row-main {
-    display: flex;
-    height: 100%;
-    gap: 10px;
-}
-
-.col {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    flex: 1;
-}
-
-.col .nested-row {
-    display: flex;
-    gap: 10px;
-    flex: 1;
-}
-
-.col .nested-row.single .col {
-    flex: 1;
 }
 
 .joker-title {
@@ -81,9 +66,8 @@ body::before {
     letter-spacing: 2px;
     text-shadow: 2px 2px #00ff88;
 }
-  
 
-  .joker-btn {
+.joker-btn {
     color: #a29bfe;
     font-weight: bold;
     text-decoration: none;
@@ -96,13 +80,33 @@ body::before {
 }
 
 .joker-btn:hover {
-    background-color: rgba(0, 255, 0, 0.2); 
+    background-color: rgba(0, 255, 0, 0.2);
     color: #00ff88;
     box-shadow: 0 0 10px #00ff88;
     text-shadow: 1px 1px #800080;
 }
 
+.container {
+    height: calc(100vh - 112px);
+    overflow-y: auto;
+    padding: 0;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
 
+.container::-webkit-scrollbar {
+    display: none;
+}
 
+@media (max-width: 768px) {
+    .joker-title {
+        font-size: 2rem;
+        text-align: center;
+        width: 100%;
+    }
 
-
+    .joker-btn {
+        font-size: 1rem;
+        padding: 8px 12px;
+    }
+}
