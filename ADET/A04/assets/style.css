@@ -1,0 +1,92 @@
+html,
+body {
+    overflow: hidden;
+    height: 100%;
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+.navbar {
+    background-color: #590202;
+}
+
+.card-base {
+    padding: 6px;
+    background-color: #000000; 
+    border-radius: 16px;
+    margin: 6px;
+    display: inline-block;
+    transition: transform 0.3s ease;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+.card-base:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+}
+
+.categories-card {
+    background-color: #590202; 
+    border-radius: 16px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+
+.custom-button {
+    background-color: #590202;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); 
+    transition: all 0.3s ease; 
+    border-radius: 12px; 
+}
+
+.custom-button:hover {
+    background-color: #731010;
+    cursor: pointer;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); 
+    transform: translateY(-4px); 
+}
+
+.custom-button.content {
+    width: 200px;
+    background-color: #590202;
+    color: white;
+}
+
+.maincontainer .custom-button.content:hover {
+    background-color: #590202;
+    cursor: default;
+}
+
+.receipt-panel {
+    background-color: #2e2e2e; 
+    color: white;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+
+.product-img {
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.maincontainer {
+    height: calc(100vh - 100px);
+    overflow: auto;
+    background-image: url('img/bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+#categories .custom-button {
+    width: 100% !important;
+}
+
+.vh-100-no-scroll {
+    height: calc(100vh - 100px);
+    overflow-y: auto;
+}

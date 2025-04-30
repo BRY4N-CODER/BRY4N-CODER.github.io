@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>POS System</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+
+  <nav class="navbar navbar-dark mb-3">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <img src="assets/img/MaritesBBQ.png" alt="Logo" width="80" height="80" class="me-2">
+        <span class="fw-bold">MARITES BBQ</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- POS LAYOUT -->
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-2">
+        <div class="card p-3 h-100 d-flex flex-column gap-2 categories-card" id="categories"></div>
+    </div>
+
+      <!-- PRODUCT DISPLAY -->
+      <div class="col-7">
+        <div class="card p-3 maincontainer">
+          <div class="d-flex flex-row flex-wrap" id="maincontainer"></div>
+        </div>
+      </div>
+
+      <!-- RECEIPT PANEL -->
+      <div class="col-3">
+        <div class="card p-3 vh-100-no-scroll receipt-panel">
+          <div id="receipt"></div>
+          <div class="mt-4 d-flex flex-row justify-content-between">
+            <div><b>TOTAL</b></div>
+            <div><b id="totalValue">₱0</b></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var products = [
+      {
+        "category": "Short Orders",
+        "contents": [
+          {
+            "isAvailable": true,
+            "name": "Lomi Batangas",
+            "code": "LMB",
+            "sizes": [
+              { "name": "regular", "code": "LRG", "price": 79 },
+              { "name": "medium", "code": "LMD", "price": 99 },
+              { "name": "large", "code": "LLG", "price": 149 }
+            ]
+          },
+          {
+            "isAvailable": true,
+            "name": "Chami",
+            "code": "CHM",
+            "sizes": [
+              { "name": "regular", "code": "RG", "price": 89 },
+              { "name": "large", "code": "MD", "price": 109 }
+            ]
+          },
+          {
+            "isAvailable": true,
+            "name": "Canton",
+            "code": "CT",
+            "sizes": [
+              { "name": "regular", "code": "RG", "price": 109 },
+              { "name": "large", "code": "MD", "price": 149 }
+            ]
+          },
+          {
+            "isAvailable": true,
+            "name": "Beef Mami",
+            "code": "BF",
+            "sizes": [
+              { "name": "regular", "code": "RG", "price": 69 },
+              { "name": "large (with egg)", "code": "MD", "price": 79 }
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Classics",
+        "contents": [
+          { "isAvailable": true, "name": "Pork Sinigang", "code": "SNG", "price": 80 },
+          { "isAvailable": true, "name": "Chicken Adobo", "code": "ADB", "price": 70 },
+          { "isAvailable": true, "name": "Kare-Kare", "code": "KR-KR", "price": 80 },
+          { "isAvailable": true, "name": "Laing", "code": "LNG", "price": 50 },
+          { "isAvailable": true, "name": "Sizzling Sisig", "code": "SSG", "price": 149 },
+          { "isAvailable": true, "name": "Pork Adobo", "code": "PADB", "price": 70 },
+          { "isAvailable": true, "name": "Ginataang Tilapia", "code": "GTLP", "price": 80 },
+          { "isAvailable": true, "name": "Breaded Porkchop", "code": "PKC", "price": 80 },
+          { "isAvailable": true, "name": "Pork Afritada", "code": "AFTD", "price": 70 },
+          { "isAvailable": true, "name": "Lechon Paksiw", "code": "LPKW", "price": 80 }
+        ]
+      },
+      {
+        "category": "Sides",
+        "contents": [
+          { "isAvailable": true, "name": "Shanghai (9 Pieces)", "code": "SNGH", "price": 69 },
+          { "isAvailable": true, "name": "Fries", "code": "FR", "price": 59 },
+          { "isAvailable": true, "name": "Custard Cake", "code": "CTC", "price": 79 },
+          { "isAvailable": true, "name": "Leche Flan", "code": "LCF", "price": 69 },
+          { "isAvailable": true, "name": "Pichi-Pichi", "code": "PP", "price": 59 }
+        ]
+      }
+    ];
+
+    var total = 0;
+
+    function loadCategories() {
+      var categoriesContainer = document.getElementById("categories");
+      categoriesContainer.innerHTML = "";
+      products.forEach((product, index) => {
+        categoriesContainer.innerHTML += `
+          <div onclick="loadProducts('${index}')" class="card custom-button p-2 text-center">
+            <small>${product.category}</small>
+          </div>
+        `;
+      });
+    }
+
+    function loadProducts(categoryIndex) {
+      var maincontainer = document.getElementById("maincontainer");
+      maincontainer.innerHTML = "";
+
+      if (categoryIndex == 0) {
+        products[categoryIndex].contents.forEach(content => {
+          content.sizes.forEach(size => {
+            maincontainer.innerHTML += `
+              <div class="card-base">
+                <div onclick="addToReceipt('${size.price}','${content.code + size.code}')" class="card custom-button content p-2 text-center">
+                  <img src="assets/img/${content.code + size.code}.png" alt="${content.name}" class="product-img mb-1">
+                  <small>${content.name} (${size.name})</small><br>
+                  <small>₱${size.price}</small>
+                </div>
+              </div>
+            `;
+          });
+        });
+      } else {
+        products[categoryIndex].contents.forEach(content => {
+          if (content.isAvailable) {
+            maincontainer.innerHTML += `
+              <div class="card-base">
+                <div onclick="addToReceipt('${content.price}','${content.code}')" class="card custom-button content p-2 text-center">
+                  <img src="assets/img/${content.code}.png" alt="${content.name}" class="product-img mb-1">
+                  <small>${content.name}</small><br>
+                  <small>₱${content.price}</small>
+                </div>
+              </div>
+            `;
+          }
+        });
+      }
+    }
+
+    function addToReceipt(price, code) {
+      var receiptContainer = document.getElementById("receipt");
+      total += parseFloat(price);
+      document.getElementById("totalValue").innerHTML = `₱${total}`;
+      receiptContainer.innerHTML += `
+        <div class="d-flex flex-row justify-content-between">
+          <div><small>${code}</small></div>
+          <div><small>₱${price}</small></div>
+        </div>
+      `;
+    }
+
+    loadCategories();
+    loadProducts(0);
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
