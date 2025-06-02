@@ -90,3 +90,27 @@ body {
     height: calc(100vh - 100px);
     overflow-y: auto;
 }
+
+@media (max-width: 768px) {
+    .receipt {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #2e2e2e;
+        z-index: 1050;
+        max-height: 45vh;
+        overflow-y: auto;
+        border-top: 2px solid #444;
+        border-radius: 0;
+    }
+
+    .maincontainer {
+        margin-bottom: 48vh; 
+    }
+
+    html,
+    body {
+        overflow-y: auto; 
+    }
+}
