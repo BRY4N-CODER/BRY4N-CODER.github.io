@@ -1,7 +1,7 @@
 html,
 body {
-    overflow: hidden;
     height: 100%;
+    overflow-y: auto;
     background-color: #1a1a1a;
     color: #ffffff;
 }
@@ -12,7 +12,7 @@ body {
 
 .card-base {
     padding: 6px;
-    background-color: #000000; 
+    background-color: #000000;
     border-radius: 16px;
     margin: 6px;
     display: inline-block;
@@ -26,7 +26,7 @@ body {
 }
 
 .categories-card {
-    background-color: #590202; 
+    background-color: #590202;
     border-radius: 16px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
 }
@@ -35,16 +35,16 @@ body {
 .custom-button {
     background-color: #590202;
     color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); 
-    transition: all 0.3s ease; 
-    border-radius: 12px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+    border-radius: 12px;
 }
 
 .custom-button:hover {
     background-color: #731010;
     cursor: pointer;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); 
-    transform: translateY(-4px); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+    transform: translateY(-4px);
 }
 
 .custom-button.content {
@@ -53,13 +53,17 @@ body {
     color: white;
 }
 
-.maincontainer .custom-button.content:hover {
-    background-color: #590202;
-    cursor: default;
+.maincontainer {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.maincontainer::-webkit-scrollbar {
+    display: none;
 }
 
 .receipt-panel {
-    background-color: #2e2e2e; 
+    background-color: #2e2e2e;
     color: white;
     border-radius: 12px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
@@ -86,6 +90,13 @@ body {
     width: 100% !important;
 }
 
+.main-scroll {
+    max-height: 65vh;
+    /* Adjust as needed */
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
 .vh-100-no-scroll {
     height: calc(100vh - 100px);
     overflow-y: auto;
@@ -106,11 +117,11 @@ body {
     }
 
     .maincontainer {
-        margin-bottom: 48vh; 
+        margin-bottom: 48vh;
     }
 
     html,
     body {
-        overflow-y: auto; 
+        overflow-y: auto;
     }
 }
